@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		09DAD71824C22AA300C552F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DAD71724C22AA300C552F5 /* Assets.xcassets */; };
 		09DAD71B24C22AA300C552F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DAD71A24C22AA300C552F5 /* Preview Assets.xcassets */; };
 		09DAD71E24C22AA300C552F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DAD71C24C22AA300C552F5 /* LaunchScreen.storyboard */; };
+		EE0C3704B8AB0B0FBFC924AF /* Pods_public_ip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9880D0838F6BC06C309815B1 /* Pods_public_ip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,10 @@
 		09DAD71A24C22AA300C552F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09DAD71D24C22AA300C552F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09DAD71F24C22AA300C552F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09DAD72524C23F3F00C552F5 /* public-ip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "public-ip.entitlements"; sourceTree = "<group>"; };
+		18385AE794311400C1590884 /* Pods-public-ip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-public-ip.debug.xcconfig"; path = "Target Support Files/Pods-public-ip/Pods-public-ip.debug.xcconfig"; sourceTree = "<group>"; };
+		9880D0838F6BC06C309815B1 /* Pods_public_ip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_public_ip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBB969D825E451EEC7CCC1F /* Pods-public-ip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-public-ip.release.xcconfig"; path = "Target Support Files/Pods-public-ip/Pods-public-ip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0C3704B8AB0B0FBFC924AF /* Pods_public_ip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 			children = (
 				09DAD71024C22A9E00C552F5 /* public-ip */,
 				09DAD70F24C22A9E00C552F5 /* Products */,
+				AB5745042077ABAE27F08FE2 /* Pods */,
+				8828BBA9E9872C5B31119C79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +64,7 @@
 		09DAD71024C22A9E00C552F5 /* public-ip */ = {
 			isa = PBXGroup;
 			children = (
+				09DAD72524C23F3F00C552F5 /* public-ip.entitlements */,
 				09DAD71124C22A9E00C552F5 /* AppDelegate.swift */,
 				09DAD71324C22A9E00C552F5 /* SceneDelegate.swift */,
 				09DAD71524C22A9E00C552F5 /* ContentView.swift */,
@@ -75,6 +84,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8828BBA9E9872C5B31119C79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9880D0838F6BC06C309815B1 /* Pods_public_ip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB5745042077ABAE27F08FE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18385AE794311400C1590884 /* Pods-public-ip.debug.xcconfig */,
+				CEBB969D825E451EEC7CCC1F /* Pods-public-ip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09DAD72224C22AA300C552F5 /* Build configuration list for PBXNativeTarget "public-ip" */;
 			buildPhases = (
+				6F7D8945948310482FAFC860 /* [CP] Check Pods Manifest.lock */,
 				09DAD70A24C22A9E00C552F5 /* Sources */,
 				09DAD70B24C22A9E00C552F5 /* Frameworks */,
 				09DAD70C24C22A9E00C552F5 /* Resources */,
+				00006DDE62B0E47ED1A84AAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00006DDE62B0E47ED1A84AAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-public-ip/Pods-public-ip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-public-ip/Pods-public-ip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-public-ip/Pods-public-ip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F7D8945948310482FAFC860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-public-ip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09DAD70A24C22A9E00C552F5 /* Sources */ = {
@@ -282,8 +352,11 @@
 		};
 		09DAD72324C22AA300C552F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18385AE794311400C1590884 /* Pods-public-ip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "public-ip/public-ip.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"public-ip/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CN3F7BP3S;
@@ -293,8 +366,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.matteospada.public-ip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,8 +377,11 @@
 		};
 		09DAD72424C22AA300C552F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEBB969D825E451EEC7CCC1F /* Pods-public-ip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "public-ip/public-ip.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"public-ip/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CN3F7BP3S;
@@ -313,8 +391,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.matteospada.public-ip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
