@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0944680524CC50730031D8FF /* UserIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944680424CC50730031D8FF /* UserIP.swift */; };
 		09DAD71224C22A9E00C552F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAD71124C22A9E00C552F5 /* AppDelegate.swift */; };
 		09DAD71424C22A9E00C552F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAD71324C22A9E00C552F5 /* SceneDelegate.swift */; };
 		09DAD71624C22A9E00C552F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAD71524C22A9E00C552F5 /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0944680424CC50730031D8FF /* UserIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIP.swift; sourceTree = "<group>"; };
 		09DAD70E24C22A9E00C552F5 /* public-ip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "public-ip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DAD71124C22A9E00C552F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DAD71324C22A9E00C552F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				09DAD71C24C22AA300C552F5 /* LaunchScreen.storyboard */,
 				09DAD71F24C22AA300C552F5 /* Info.plist */,
 				09DAD71924C22AA300C552F5 /* Preview Content */,
+				0944680424CC50730031D8FF /* UserIP.swift */,
 			);
 			path = "public-ip";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				09DAD71224C22A9E00C552F5 /* AppDelegate.swift in Sources */,
 				09DAD71424C22A9E00C552F5 /* SceneDelegate.swift in Sources */,
 				09DAD71624C22A9E00C552F5 /* ContentView.swift in Sources */,
+				0944680524CC50730031D8FF /* UserIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "public-ip/public-ip.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"public-ip/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CN3F7BP3S;
@@ -381,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "public-ip/public-ip.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"public-ip/Preview Content\"";
 				DEVELOPMENT_TEAM = 7CN3F7BP3S;

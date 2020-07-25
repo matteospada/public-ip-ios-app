@@ -7,37 +7,59 @@
 //
 
 import SwiftUI
-import SwiftPublicIP
+
 
 struct ContentView: View {
-      
-    @State var pubblicIP = "LOADING"
+    
+    @ObservedObject var settings = UserIP()
+    
+
+    
     
     var body: some View {
         ZStack
             {
                 Color(red: 0.22, green: 0.24, blue: 0.27, opacity: 1.00)
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                if(settings.pubblicIP == "OFFLINE"){
+                    VStack{
+                    Text("YOU ARE OFFLINE").foregroundColor(Color(red: 1.00, green: 1.00, blue: 1.00, opacity: 1.00)).font(.title).padding(10)
+                    Text("CHECK YOUR NETWORK CONNECTIVITY").foregroundColor(Color(red: 0.77, green: 0.98, blue: 0.43, opacity: 1.00)).font(.footnote).padding(10)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    }
+                } else {
                 VStack {
-                    Text("YOUR PUBBLIC IP IS:").foregroundColor(Color(red: 1.00, green: 1.00, blue: 1.00, opacity: 1.00)).font(.title).padding(10)
                     
-                     Text(pubblicIP).foregroundColor(Color(red: 1.00, green: 1.00, blue: 1.00, opacity: 1.00)).font(.title).padding(10)
+                    Text("YOUR PUBLIC IP IS:").foregroundColor(Color(red: 1.00, green: 1.00, blue: 1.00, opacity: 1.00)).font(.title).padding(10)
                     
-                    Text("TAP TO COPY TO CLIPBOARD").foregroundColor(Color(red: 0.77, green: 0.98, blue: 0.43, opacity: 1.00)).font(.footnote).padding(10)
-                    
+                    Button(action: {
+                        
+                        let pasteboard = UIPasteboard.general
+                        pasteboard.strings = [self.settings.pubblicIP]
+                        self.settings.changeClipboardText()
+                        
+                        
+                    }) {
+                        VStack {
+                            Text(settings.pubblicIP).foregroundColor(Color(red: 1.00, green: 1.00, blue: 1.00, opacity: 1.00)).font(.title).padding(10)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                            
+                            Text(settings.clipboardState).foregroundColor(Color(red: 0.77, green: 0.98, blue: 0.43, opacity: 1.00)).font(.footnote).padding(10)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                        }
+                        
+                        
+                    }.buttonStyle(PlainButtonStyle())
                     
                 }
-                // Your other content here
-                // Other layers will respect the safe area edges
-        }.onAppear{
-            SwiftPublicIP.getPublicIP(url: PublicIPAPIURLs.ipv4.icanhazip.rawValue) { (string, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else if let string = string {
-                    self.pubblicIP = string
                 }
+        }.onAppear(perform: {
+            self.settings.setIP()
             }
-        }
+        )
     }
 }
 
@@ -46,3 +68,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView().previewDevice(PreviewDevice(rawValue: "iPhone XS"))
     }
 }
+
